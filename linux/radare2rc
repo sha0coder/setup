@@ -1,3 +1,5 @@
 (yara x; !yara -$0w /Users/sha0coder/lab/yaras/all.yar `o.`)
 e cfg.fortunes=false
+e io.unalloc=true
+
 
