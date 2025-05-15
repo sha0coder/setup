@@ -1,3 +1,17 @@
-(yara x; !yara -$0w /Users/sha0coder/lab/yaras/all.yar `o.`)
+e io.unalloc=true
 e cfg.fortunes=false
+e emu.str=true
+e bin.relocs.apply=true
+e dir.tmp=/tmp/
+decai -e deterministic=true
+decai -e lang=Python
+decai -e cmds=pdd,pdg
+decai -e prompt=..
+decai -e api=ollama
+decai -e model=qwen2.5-coder:latest
+
+(yara x; !yara -$0w /home/sha0/lab/yaras/all.yar `o.`)
+
+
+
 
