@@ -1,29 +1,27 @@
 syn on
-set mouse=
+set mouse=a
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
-colorscheme desert
 
 
 call plug#begin()
 
-"Plug 'neovim/nvim-lsp'
+Plug 'neovim/nvim-lsp'
 "Plug 'ervandew/supertab'
 Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.5'}
 Plug 'rust-lang/rust.vim'
-"Plug 'neomake/neomake'
-"Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 "Plug 'EdenEast/nightfox.nvim'
-"Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'
 "Plug 'simrat39/rust-tools.nvim'
 "Plug 'projekt0n/github-nvim-theme', { 'tag': 'v0.0.7' }
 "Plug 'ziglang/zig.vim'
 "Plug 'thecodinglab/nvim-vlang'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -64,8 +62,6 @@ highlight TelescopeNormal guifg=#D8DEE9
 " Define el color del resumen de resultados seleccionado
 highlight TelescopeMatching guifg=#81A1C1 gui=bold
 
-" execute python files when saving, be sure of managing arguments
-autocmd BufWritePost *.py !python3 %
 
 
 
