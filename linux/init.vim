@@ -65,7 +65,7 @@ highlight TelescopeNormal guifg=#D8DEE9
 highlight TelescopeMatching guifg=#81A1C1 gui=bold
 
 " execute python files when saving, be sure of managing arguments
-autocmd BufWritePost *.py !python3 %
+autocmd BufWritePost *.py if v:cmdbang == 0 && getcmdtype() == '' | execute '!python3 %' | endif
 
 
 

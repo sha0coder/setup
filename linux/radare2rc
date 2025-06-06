@@ -3,6 +3,7 @@ e cfg.fortunes=false
 e emu.str=true
 e bin.relocs.apply=true
 e dir.tmp=/tmp/
+e scr.prompt.flag =1
 decai -e deterministic=true
 decai -e lang=Python
 decai -e cmds=pdd,pdg
@@ -11,7 +12,5 @@ decai -e api=ollama
 decai -e model=qwen2.5-coder:latest
 
 (yara x; !yara -$0w /home/sha0/lab/yaras/all.yar `o.`)
-
-
 
 
