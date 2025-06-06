@@ -4,6 +4,7 @@ e emu.str=true
 e bin.relocs.apply=true
 e dir.tmp=/tmp/
 e scr.prompt.flag =1
+e cfg.editor =nvim
 decai -e deterministic=true
 decai -e lang=Python
 decai -e cmds=pdd,pdg
