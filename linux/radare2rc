@@ -11,6 +11,8 @@ decai -e cmds=pdd,pdg
 decai -e prompt=..
 decai -e api=ollama
 decai -e model=qwen2.5-coder:latest
+r2ai -e r2ai.api=ollama
+r2ai -e model=qwen2.5-coder:latest
 
 (yara x; !yara -$0w /home/sha0/lab/yaras/all.yar `o.`)
 
