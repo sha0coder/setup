@@ -49,7 +49,15 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+--
+-- /usr/share/awesome/themes/gtk/theme.lua
+-- /usr/share/awesome/themes/xresources/theme.lua
+-- /usr/share/awesome/themes/zenburn/theme.lua
+-- /usr/share/awesome/themes/default/theme.lua
+-- /usr/share/awesome/themes/sky/theme.lua
+--
+--
+beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 awful.spawn.with_shell("setxkbmap es")
@@ -184,6 +192,9 @@ local function set_wallpaper(s)
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+awful.spawn.with_shell("xrandr --output eDP --off")
+awful.spawn.with_shell("flameshot")
+-- wallpaper here:   beautiful.wallpaper = "/home/sha0/... .jpg"
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
@@ -635,11 +646,6 @@ client.connect_signal("manage", function(c)
     end
 end)
 
-awesome.connect_signal("startup::once", function()
-    awful.spawn.with_shell("randr --output eDP --off")
-    awful.spawn.with_shell("flameshot")
-    awful.spawn.with_shell("sleep 4 && nitrogen --restore")
-end)
 
 
 

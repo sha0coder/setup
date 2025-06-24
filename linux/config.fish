@@ -5,5 +5,8 @@ end
 alias l="ls -ltra"
 alias p="ps auxf"
 alias n="sudo netstat -putan"
+export EDITOR="nvim"
+export PATH="$HOME/.cargo/bin:/home/sha0/.local/bin:/opt/zig/:$PATH"
 
-export PATH="$HOME/.cargo/bin:$PATH"
+
+
