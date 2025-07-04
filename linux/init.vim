@@ -11,11 +11,17 @@ call plug#begin()
 
 "Plug 'neovim/nvim-lsp'
 "Plug 'ervandew/supertab'
+"Plug 'github/copilot.vim'
+Plug 'Exafunction/codeium.vim'
 Plug 'dense-analysis/ale'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.5'}
 Plug 'rust-lang/rust.vim'
-"Plug 'neomake/neomake'
+Plug 'neomake/neomake'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'ziglang/zig.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 "Plug 'davidhalter/jedi-vim'
 "Plug 'EdenEast/nightfox.nvim'
 "Plug 'neovim/nvim-lspconfig'
@@ -31,6 +37,9 @@ nnoremap ff <cmd>Telescope find_files<cr>
 nnoremap fg <cmd>Telescope live_grep<cr>
 nnoremap fb <cmd>Telescope buffers<cr>
 nnoremap fh <cmd>Telescope help_tags<cr>
+
+let g:codeium_enabled = 0
+command! AI CodeiumToggle
 
 "colorscheme default
 
@@ -64,10 +73,19 @@ highlight TelescopeNormal guifg=#D8DEE9
 " Define el color del resumen de resultados seleccionado
 highlight TelescopeMatching guifg=#81A1C1 gui=bold
 
-" execute python files when saving, be sure of managing arguments
-autocmd BufWritePost *.py if v:cmdbang == 0 && getcmdtype() == '' | execute '!python3 %' | endif
 
+"autocmd BufWritePost *.py if !v:cmdbang && getcmdtype() == '' | execute '!python3 %' | endif  
+"autocmd BufWritePost *.c if !v:cmdbang && getcmdtype() == '' | execute '!make' | endif  
+"autocmd BufWritePost *.cpp if !v:cmdbang && getcmdtype() == '' | execute '!make' | endif  
+"autocmd BufWritePost *.zig if !v:cmdbang && getcmdtype() == '' | execute '!zig test %' | endif  
 
+cnoreabbrev zig !zig run %
+
+" comentar bloque
+"vnoremap c :norm I//<CR>
+"vnoremap v :'<,'>s/\/\///<CR>
+
+autocmd FileType zig lua vim.lsp.start({name='zls', cmd={'zls'}, root_dir=vim.fn.getcwd()})
 
 lua <<EOF
 EOF
