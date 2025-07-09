@@ -45,6 +45,15 @@ command! AI CodeiumToggle
 
 
 
+" espacio + enter -> ir a definición
+nnoremap <silent> <Space><CR> <cmd>lua vim.lsp.buf.definition()<CR>
+
+" espacio + b -> back, volver
+nnoremap <silent> <Space>b <C-o>
+
+
+
+
 " Configuración para hacer la selección más visible en Telescope
 if exists('g:colors_name')
   highlight link TelescopeSelection Visual
