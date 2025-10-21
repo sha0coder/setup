@@ -16,21 +16,19 @@ apt install -y unzip nodejs npm ffmpeg ranger mplayer strace ltrace valgrind
 npm install -g npm 
 apt install -y net-tools ufw readline-common wireshark tshark tcpdump tcpflow nautilus nitrogen arping arp-scan
 apt install -y keepassxc meld ranger kazam qemu-system
-apt install -y awesome awesome-cli awesome-extra checksec gdb i3lock jq sqlite3
+apt install -y awesome awesome-cli awesome-extra checksec gdb i3lock jq sqlite3 dmenu i3lock
 apt install -y flameshot
 apt install -y whois
-apt install -y alacritty
+apt install -y alacritty wipe
 apt install -y ufw iptables
-apt install -y keepassxc
+apt install -y keepassxc xtrlock macchanger
 apt install -y wireguard wireguard-tools
 apt install -y chromium
-apt install -y brave
-apt install -y cheese
-apt install -y mplayer 
+apt install -y cheese binwalk
 apt install -y firmware-iwlwifi firmware-linux
-apt install -y python3-pip 
+apt install -y python3-pip pulseaudio-utils htop
 apt install -y nmap yara python3-yara libyara-dev masscan dirbuster gobuster binwalk aircrack-ng 
-apt install -y default-jdk
+apt install -y default-jdk ent 
 
 
 # cross-compilation to windows

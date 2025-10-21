@@ -192,14 +192,16 @@ local function set_wallpaper(s)
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-awful.spawn.with_shell("xrandr --output eDP --off")
+awful.spawn.with_shell("xrandr --output eDP-1 --off")
+awful.spawn.with_shell("xrandr --output HDMI-1 --mode 1920x1080")
 awful.spawn.with_shell("flameshot")
-beautiful.wallpaper = "/home/sha0/Imágenes/Fondos de escritorio/hacker_artistic.jpg"
+beautiful.wallpaper = "/home/user/Pictures/wallpapers/colorful.jpg"
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
     -- Wallpaper
     set_wallpaper(s)
+
 
     -- Each screen has its own tag table.
     awful.tag({ "  1  ", "  2  ", "  3  ", "  4  ", "  5  ", "  6  ", "  7  ", "  8  ", "  9  " }, s, awful.layout.layouts[1])
@@ -231,6 +233,12 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
+    -- mouse wheel inverted
+     s.mywibox:buttons(gears.table.join(
+        awful.button({}, 4, function() awful.tag.viewprev(s) end),
+        awful.button({}, 5, function() awful.tag.viewnext(s) end)
+    ))
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -250,14 +258,6 @@ awful.screen.connect_for_each_screen(function(s)
         },
     }
 end)
--- }}}
-
--- {{{ Mouse bindings
-root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
-))
 -- }}}
 
 
