@@ -8,7 +8,7 @@ fi
 apt update
 apt upgrade
 apt install -y build-essential gcc g++ make cmake ninja-build  meson cmake-data pkg-config nasm ca-certificates
-apt install -y git curl pkg-config tmux wget fish dnsutils ethtool
+apt install -y git curl pkg-config tmux wget fish dnsutils ethtool tig
 apt install -y python3
 apt install -y python3-pip
 apt install -y zlib1g zlib1g-dev 
