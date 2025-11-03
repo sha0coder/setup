@@ -8,6 +8,7 @@ fi
 apt update
 apt upgrade
 apt install -y build-essential gcc g++ make cmake ninja-build  meson cmake-data pkg-config nasm ca-certificates
+sudo apt install -y clang llvm libbpf-dev linux-headers-$(uname -r)
 apt install -y git curl pkg-config tmux wget fish dnsutils ethtool tig
 apt install -y python3
 apt install -y python3-pip
