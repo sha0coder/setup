@@ -8,19 +8,19 @@ fi
 apt update
 apt upgrade
 apt install -y build-essential gcc g++ make cmake ninja-build  meson cmake-data pkg-config nasm ca-certificates
-sudo apt install -y clang llvm libbpf-dev linux-headers-$(uname -r)
-apt install -y git curl pkg-config tmux wget fish dnsutils ethtool tig
-apt install -y python3
-apt install -y python3-pip
+apt install -y autoconf automake libtool pkg-config build-essential libfuse-dev libmtp-dev
+apt install -y clang llvm libbpf-dev linux-headers-$(uname -r)
+apt install -y git curl pkg-config tmux wget fish dnsutils ethtool tig autoconf-archive
+apt install -y python3 python3-pip
 apt install -y zlib1g zlib1g-dev 
-apt install -y unzip nodejs npm ffmpeg ranger mplayer strace ltrace valgrind
+apt install -y unzip nodejs npm ffmpeg ranger mplayer strace ltrace valgrind zip 7zip
 npm install -g npm 
 apt install -y net-tools ufw readline-common wireshark tshark tcpdump tcpflow nautilus nitrogen arping arp-scan
 apt install -y keepassxc meld ranger kazam qemu-system
 apt install -y awesome awesome-cli awesome-extra checksec gdb i3lock jq sqlite3 dmenu i3lock
 apt install -y flameshot
-apt install -y whois
-apt install -y alacritty wipe
+apt install -y whois adb jmtpfs 
+apt install -y alacritty wipe gedit
 apt install -y ufw iptables
 apt install -y keepassxc xtrlock macchanger
 apt install -y wireguard wireguard-tools
