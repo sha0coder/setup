@@ -1,3 +1,9 @@
+local awful = require("awful")
+local wibox = require("wibox")
+
+
+
+
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
@@ -192,10 +198,12 @@ local function set_wallpaper(s)
 end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-awful.spawn.with_shell("xrandr --output eDP-1 --off")
-awful.spawn.with_shell("xrandr --output HDMI-1 --mode 1920x1080")
+--awful.spawn.with_shell("xrandr --output eDP-1 --off")
+--awful.spawn.with_shell("xrandr --output HDMI-1 --mode 1920x1080")
+awful.spawn.with_shell("nm-try")
+awful.spawn.with_shell("volctl") -- https://github.com/buzz/volctl
 awful.spawn.with_shell("flameshot")
-beautiful.wallpaper = "/home/user/Pictures/wallpapers/colorful.jpg"
+beautiful.wallpaper = "/home/uid0/Pictures/wallpapers/colorful.jpg"
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
@@ -241,6 +249,12 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Add widgets to the wibox
     s.mywibox:setup {
+        -- después de crear volume_widget
+        -- volume_widget:buttons(gears.table.join(
+        --    awful.button({"Mod4"}, 4, function() awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ +1%"); update_volume() end),
+        --    awful.button({"Mod4"}, 5, function() awful.spawn.with_shell("pactl set-sink-volume @DEFAULT_SINK@ -1%"); update_volume() end)
+        --))
+
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,

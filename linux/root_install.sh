@@ -15,13 +15,13 @@ apt install -y python3 python3-pip
 apt install -y zlib1g zlib1g-dev 
 apt install -y unzip nodejs npm ffmpeg ranger mplayer strace ltrace valgrind zip 7zip
 npm install -g npm 
-apt install -y net-tools ufw readline-common wireshark tshark tcpdump tcpflow nautilus nitrogen arping arp-scan
+apt install -y net-tools ufw readline-common wireshark tshark tcpdump tcpflow nautilus nitrogen arping arp-scan sqlite3
 apt install -y keepassxc meld ranger kazam qemu-system
 apt install -y awesome awesome-cli awesome-extra checksec gdb i3lock jq sqlite3 dmenu i3lock
-apt install -y flameshot
+apt install -y flameshot picocom
 apt install -y whois adb jmtpfs 
 apt install -y alacritty wipe gedit
-apt install -y ufw iptables
+apt install -y ufw iptables bluez blueman pavucontrol
 apt install -y keepassxc xtrlock macchanger
 apt install -y wireguard wireguard-tools
 apt install -y chromium
