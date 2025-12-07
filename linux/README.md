@@ -14,6 +14,7 @@ awesome-wm is ok by itself but can be powered by extra useful stuff:
 - i3lock to lock the screen (or xtrlock if you are freak)
 - nm-try for choosing wifi and managing the network a bit
 - volctl for controlling audio input and volume (from https://github.com/buzz/volctl) 
+- blueman-applet for selecting the bluetooth
 - alacritty the best terminal for all archs.
 
 check the awesome-wm configuration to have this awesome desktop.

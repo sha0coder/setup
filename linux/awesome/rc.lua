@@ -202,6 +202,7 @@ end
 --awful.spawn.with_shell("xrandr --output HDMI-1 --mode 1920x1080")
 awful.spawn.with_shell("nm-try")
 awful.spawn.with_shell("volctl") -- https://github.com/buzz/volctl
+awful.spawn.with_shell("blueman-applet")
 awful.spawn.with_shell("flameshot")
 beautiful.wallpaper = "/home/uid0/Pictures/wallpapers/colorful.jpg"
 screen.connect_signal("property::geometry", set_wallpaper)
