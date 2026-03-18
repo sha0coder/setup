@@ -1,0 +1,15 @@
+
+- brew
+- sniffnet
+- spotify
+- whatsapp
+- telegram
+- alacritty
+- brave
+- keepass
+- x
+- wireshark
+- discord
+- binary ninja
+- libreoffice
+- phiewer
