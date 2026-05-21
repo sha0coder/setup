@@ -24,7 +24,7 @@ apt install -y alacritty wipe gedit
 apt install -y ufw iptables bluez blueman pavucontrol
 apt install -y keepassxc xtrlock macchanger
 apt install -y wireguard wireguard-tools
-apt install -y chromium
+apt install -y chromium irssi
 apt install -y cheese binwalk
 apt install -y firmware-iwlwifi firmware-linux
 apt install -y python3-pip pulseaudio-utils htop
