@@ -1,0 +1,99 @@
+* {
+    font-family: "Hack Nerd Font";
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(15, 15, 20, 0.45);
+    border-radius: 16px;
+    color: #cdd6f4;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 6px 10px;
+}
+
+/* Workspaces */
+#workspaces {
+    background: rgba(30, 30, 46, 0.8);
+    padding: 4px;
+    margin: 6px;
+    border-radius: 14px;
+}
+
+#workspaces button {
+    color: #bac2de;
+    padding: 0 10px;
+    margin: 0 4px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(137, 180, 250, 0.25);
+    color: #89b4fa;
+}
+
+#workspaces button.active {
+    background: linear-gradient(
+        45deg,
+        #89b4fa,
+        #cba6f7
+    );
+    color: #11111b;
+}
+
+/* módulos */
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray {
+    background: rgba(30, 30, 46, 0.75);
+    padding: 6px 14px;
+    margin: 6px 4px;
+    border-radius: 14px;
+    color: #cdd6f4;
+}
+
+/* hover efecto */
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover {
+    background: rgba(137, 180, 250, 0.25);
+    color: #89b4fa;
+}
+
+/* reloj */
+#clock {
+    color: #f9e2af;
+}
+
+/* audio */
+#pulseaudio {
+    color: #a6e3a1;
+}
+
+/* red */
+#network {
+    color: #89dceb;
+}
+
+/* cpu */
+#cpu {
+    color: #fab387;
+}
+
+/* memoria */
+#memory {
+    color: #f38ba8;
+}
