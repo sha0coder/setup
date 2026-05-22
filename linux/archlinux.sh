@@ -6,6 +6,7 @@ sudo pacman -S wireguard-tools macchanger ufw whois scrcpy unzip ffmpeg mplayer 
 mingw-w64-binutils mingw-w64-crt mingw-w64-gcc mingw-w64-headers mingw-w64-winpthreads 
 sudo pacman -S pipewire wireplumber wev cava
 sudo pacman -S nerd-fonts v4l-utils kamoso
+sudo pacman -S ollama
 
 # yubi key
 sudo pacman -S ykman libfido2 pcscd
