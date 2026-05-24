@@ -1,40 +1,70 @@
-sudo pacman -Syu
-sudo pacman -S pacman
-sudo pacman -S hyprland hyprutils hyprshot hyprpaper hyprlock kitty hyprlauncher dunst waybar hyprshutdown hypridle keepassxc
-sudo pacman -S fish gcc gdb ltrace strace cmake rust cargo neovim git wget curl virtualbox chromium builder less tree irssi neovim fish
-sudo pacman -S wireguard-tools macchanger ufw whois unzip ffmpeg mplayer ranger valgrind 7zip nmap netcat python-pip binwalk yara gobuster aircrack-ng meld sqlite3 wireshark-qt wireshark-cli tcpdump tcpflow net-tools telegram-desktop
-mingw-w64-binutils mingw-w64-crt mingw-w64-gcc mingw-w64-headers mingw-w64-winpthreads 
-sudo pacman -S pipewire wireplumber wev cava socat
-sudo pacman -S nerd-fonts v4l-utils kamoso remmina radare2 espeak-ng 
-sudo pacman -S ollama npm nodejs feh gnome-builder meson ninja clang obs-studio android-udev wipe
+#!/usr/bin/env bash
 
-sudo pacman -S virtualbox
-sudo pacman -S virtualbox virtualbox-host-dkms dkms linux-headers
+sudo pacman -Syu --noconfirm
+
+# base
+sudo pacman -S --needed --noconfirm \
+  base-devel git wget curl less tree unzip \
+  fish neovim kitty ranger chromium jq bat
+
+# hyprland
+sudo pacman -S --needed --noconfirm \
+  hyprland hyprpaper hyprlock hypridle hyprshot \
+  waybar dunst hyprlauncher hyprshutdown
+
+# dev / build
+sudo pacman -S --needed --noconfirm \
+  gcc clang cmake meson ninja make nasm \
+  rust cargo gdb ltrace strace \
+  sqlite \
+  nodejs npm \
+  python python-pip
+
+# reversing / malware / pentest
+sudo pacman -S --needed --noconfirm \
+  radare2 valgrind yara binwalk \
+  nmap netcat tcpdump tcpflow \
+  wireshark-qt wireshark-cli \
+  gobuster whois macchanger \
+  wireguard-tools ufw arp-scan \
+  net-tools socat
+
+# media
+sudo pacman -S --needed --noconfirm \
+  pipewire wireplumber ffmpeg mpv cava \
+  obs-studio
+
+# desktop utils
+sudo pacman -S --needed --noconfirm \
+  keepassxc telegram-desktop meld \
+  nerd-fonts wev
+
+# webcam
+sudo pacman -S --needed --noconfirm \
+  v4l-utils kamoso
+
+# AI
+sudo pacman -S --needed --noconfirm \
+  ollama espeak-ng
+
+# virtualbox
+sudo pacman -S --needed --noconfirm \
+  virtualbox virtualbox-host-dkms dkms linux-headers
+
 sudo modprobe vboxdrv
 
+# cross compile windows
+sudo pacman -S --needed --noconfirm mingw-w64-gcc
 
-# yubi key
-sudo pacman -S ykman libfido2 pcscd
-systemctl enable --now pcscd
+# yubikey
+sudo pacman -S --needed --noconfirm \
+  ykman libfido2 pcscd
 
-# yay (to build form aur)
-cd
-mkdir soft
-cd soft
-sudo pacman -S --needed base-devel git
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
-
-yay -S slack-desktop
-#yay -S waterfox
-
+sudo systemctl enable --now pcscd
 
 # android
-sudo pacman -S scrcpy 
+sudo pacman -S --needed --noconfirm \
+  android-udev adb scrcpy
+
 sudo udevadm control --reload-rules
-sudo udevadm trigger android-udev
-yay -S adb
-
-
+sudo udevadm trigger
