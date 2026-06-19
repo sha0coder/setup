@@ -2,6 +2,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+export PATH="$HOME/.local/bin:$PATH"
+export OLLAMA_NOHISTORY=1
+
 alias l="ls -ltra"
 alias p="ps auxf"
 alias n="sudo netstat -punta"
@@ -11,6 +14,3 @@ alias en="setxkbmap us"
 alias es="setxkbmap es"
 export EDITOR="nvim"
 #export PATH="$HOME/.cargo/bin:/home/sha0/.local/bin:/opt/zig/:$PATH"
-
-
-
